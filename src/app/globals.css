@@ -67,9 +67,43 @@ html {
 
 body {
   background-color: var(--background);
+  background-image: 
+    linear-gradient(rgba(247, 244, 238, 0.92), rgba(247, 244, 238, 0.92)),
+    url('/images/brick-pattern.jpg');
+  background-repeat: repeat;
+  background-size: 420px;
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans);
   line-height: 1.6;
+}
+
+/* ─── Subtle Brick Background for Light UI Sections ─── */
+.bg-ivory {
+  background-color: var(--color-ivory);
+  background-image: 
+    linear-gradient(rgba(247, 244, 238, 0.91), rgba(247, 244, 238, 0.91)),
+    url('/images/brick-pattern.jpg') !important;
+  background-repeat: repeat;
+  background-size: 420px;
+}
+
+.bg-cream {
+  background-color: var(--color-cream);
+  background-image: 
+    linear-gradient(rgba(242, 237, 228, 0.92), rgba(242, 237, 228, 0.92)),
+    url('/images/brick-pattern.jpg') !important;
+  background-repeat: repeat;
+  background-size: 420px;
+}
+
+.bg-surface-warm {
+  background-color: var(--color-surface-warm);
+  background-image: 
+    linear-gradient(rgba(250, 248, 244, 0.92), rgba(250, 248, 244, 0.92)),
+    url('/images/brick-pattern.jpg') !important;
+  background-repeat: repeat;
+  background-size: 420px;
 }
 
 /* ─── Respect reduced motion ─── */
@@ -85,11 +119,13 @@ body {
 }
 
 /* ─── Typography ─── */
-h1, h2, h3, h4 {
-  font-family: var(--font-serif);
-  color: var(--color-charcoal);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+@layer base {
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    color: var(--color-charcoal);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
 }
 
 /* ─── Selection ─── */

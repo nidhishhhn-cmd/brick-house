@@ -42,34 +42,35 @@ export default function HomePage() {
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-charcoal/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-charcoal/15" />
+          <div className="absolute inset-0 bg-gradient-to-r from-charcoal/80 via-charcoal/30 to-transparent" />
         </div>
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pb-16 lg:pb-20 w-full">
           <div className="max-w-2xl animate-fade-in-up">
-            <p className="text-brick-light text-sm font-medium uppercase tracking-[0.2em] mb-4">
+            <p className="!text-white/90 text-sm font-semibold uppercase tracking-[0.2em] mb-4 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
               {RESTAURANT.name} · Mangaluru
             </p>
-            <h1 className="font-serif text-ivory text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-6">
+            <h1 className="font-serif !text-white text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
               Good Food.<br />
               Great Company.
             </h1>
-            <p className="text-ivory/75 text-lg sm:text-xl leading-relaxed mb-8 max-w-lg">
+            <p className="!text-white/90 text-lg sm:text-xl leading-relaxed mb-8 max-w-lg drop-shadow-[0_1px_3px_rgba(0,0,0,0.7)]">
               A warm, inviting space where flavours from across the world meet the
               hospitality of Mangaluru.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <Link
                 href="/menu"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-brick text-ivory font-medium text-sm tracking-wide rounded-sm hover:bg-brick-dark transition-colors duration-200"
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-brick !text-white font-medium text-sm tracking-wide rounded-sm hover:bg-brick-dark transition-colors duration-200 shadow-md"
               >
                 Explore Menu
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/reservations"
-                className="inline-flex items-center gap-2 px-7 py-3.5 border border-ivory/40 text-ivory font-medium text-sm tracking-wide rounded-sm hover:bg-ivory/10 transition-colors duration-200"
+                className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-white/80 !text-white font-medium text-sm tracking-wide rounded-sm hover:bg-white/15 transition-colors duration-200 shadow-md"
               >
                 Book a Table
               </Link>

@@ -43,14 +43,18 @@ export default function Navbar() {
             className="flex items-center gap-3 group"
             aria-label="Brick House - Home"
           >
-            <div className="w-9 h-9 bg-brick rounded-sm flex items-center justify-center">
+            <div className="w-9 h-9 bg-brick rounded-sm flex items-center justify-center shadow-sm">
               <span className="font-serif text-white text-lg font-bold leading-none">B</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-serif text-charcoal text-xl leading-tight tracking-tight">
+              <span className={`font-serif text-xl leading-tight tracking-tight transition-colors duration-200 ${
+                isScrolled ? 'text-charcoal' : 'text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]'
+              }`}>
                 {RESTAURANT.name}
               </span>
-              <span className="text-muted text-[10px] uppercase tracking-[0.15em] leading-none hidden sm:block">
+              <span className={`text-[10px] uppercase tracking-[0.15em] leading-none hidden sm:block transition-colors duration-200 ${
+                isScrolled ? 'text-muted' : 'text-white/80 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]'
+              }`}>
                 Mangaluru
               </span>
             </div>
@@ -64,8 +68,10 @@ export default function Navbar() {
                 href={link.href}
                 className={`text-sm font-medium tracking-wide transition-colors duration-200 ${
                   isActive(link.href)
-                    ? 'text-brick'
-                    : 'text-charcoal/70 hover:text-charcoal'
+                    ? 'text-brick-light font-semibold'
+                    : isScrolled
+                    ? 'text-charcoal/70 hover:text-charcoal'
+                    : 'text-white/90 hover:text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]'
                 }`}
               >
                 {link.label}
@@ -73,7 +79,11 @@ export default function Navbar() {
             ))}
             <Link
               href="/reservations"
-              className="inline-flex items-center px-5 py-2.5 bg-charcoal text-ivory text-sm font-medium tracking-wide rounded-sm hover:bg-charcoal-light transition-colors duration-200"
+              className={`inline-flex items-center px-5 py-2.5 text-sm font-medium tracking-wide rounded-sm transition-colors duration-200 shadow-sm ${
+                isScrolled
+                  ? 'bg-charcoal text-ivory hover:bg-charcoal-light'
+                  : 'bg-brick text-white hover:bg-brick-dark'
+              }`}
             >
               Book a Table
             </Link>
@@ -82,7 +92,9 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-charcoal hover:text-brick transition-colors"
+            className={`lg:hidden p-2 transition-colors ${
+              isScrolled ? 'text-charcoal hover:text-brick' : 'text-white hover:text-white/80'
+            }`}
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isOpen}
           >
